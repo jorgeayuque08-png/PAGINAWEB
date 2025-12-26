@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurante</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #8b0000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        nav ul li:hover {
+            background-color: #555;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        form {
+            background-color: white;
+            padding: 15px;
+            width: 300px;
+        }
+
+        input, textarea, button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+    </style>
+
+    <script>
+        function mostrar(id) {
+            let secciones = document.querySelectorAll("section");
+            secciones.forEach(s => s.style.display = "none");
+            document.getElementById(id).style.display = "block";
+        }
+
+        window.onload = function() {
+            mostrar("inicio");
+        }
+    </script>
+</head>
+
+<body>
+
+<header>
+    <h1>Restaurante</h1>
+    <p>Bienvenido a la página web del restaurante</p>
+</header>
+
+<nav>
+    <ul>
+        <li onclick="mostrar('inicio')">Inicio</li>
+        <li onclick="mostrar('menu')">Menú</li>
+        <li onclick="mostrar('contacto')">Contacto</li>
+    </ul>
+</nav>
+
+<main>
+    <section id="inicio">
+        <h2>Inicio</h2>
+        <p>Somos un restaurante con los mejores platos.</p>
+    </section>
+
+    <section id="menu">
+        <h2>Menú</h2>
+        <p>Ceviche - S/ 25.00</p>
+        <p>Lomo Saltado - S/ 22.00</p>
+        <p>Arroz con Pollo - S/ 18.00</p>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <form>
+            <input type="text" placeholder="Nombre">
+            <input type="email" placeholder="Correo">
+            <textarea placeholder="Mensaje"></textarea>
+            <button>Enviar</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Restaurante Delicia</p>
+</footer>
+
+</body>
+</html>
+
+
